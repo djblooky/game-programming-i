@@ -13,6 +13,8 @@ namespace GameHelloWorld
         SpriteBatch spriteBatch;
 
         SpriteFont font;
+        Texture2D pacman; //all flat images are texture2D - we want .pngs
+        Vector2 pacLocation;
 
         public Game1()
         {
@@ -42,7 +44,8 @@ namespace GameHelloWorld
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("font");
-
+            pacman = Content.Load<Texture2D>("PacmanSingle"); //monogame turns everything into xmbs so no file ext needed
+            pacLocation = new Vector2(200, 200);
             // TODO: use this.Content to load your game content here
         }
 
@@ -66,6 +69,7 @@ namespace GameHelloWorld
                 Exit();
 
             // TODO: Add your update logic here
+            pacLocation += new Vector2(1, 1);
 
             base.Update(gameTime);
         }
@@ -76,12 +80,19 @@ namespace GameHelloWorld
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Coral);
+            GraphicsDevice.Clear(Color.Black);
 
             // TODO: Add your drawing code here
 
             spriteBatch.Begin(); //every begin call needs an end call
-            spriteBatch.DrawString(font, "Hello MonoGame!", new Vector2(100,100), Color.DarkGreen); //console writeline for directX
+            spriteBatch.DrawString(font, "Hello MonoGame!", new Vector2(102,102), Color.White); //console writeline for directX
+            spriteBatch.DrawString(font, "Hello MonoGame!", new Vector2(101, 101), Color.Blue);
+            spriteBatch.DrawString(font, "Hello MonoGame!", new Vector2(100, 100), Color.Red);
+
+            spriteBatch.Draw(pacman, pacLocation, Color.Green);
+            spriteBatch.Draw(pacman, new Vector2(250, 250), Color.Orange);
+            spriteBatch.Draw(pacman, new Vector2(250, 200), Color.BlueViolet);
+
             spriteBatch.End();
 
             base.Draw(gameTime);
