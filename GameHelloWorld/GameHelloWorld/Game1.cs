@@ -12,6 +12,8 @@ namespace GameHelloWorld
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        SpriteFont font;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -39,6 +41,7 @@ namespace GameHelloWorld
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            font = Content.Load<SpriteFont>("font");
 
             // TODO: use this.Content to load your game content here
         }
@@ -73,9 +76,13 @@ namespace GameHelloWorld
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Coral);
 
             // TODO: Add your drawing code here
+
+            spriteBatch.Begin(); //every begin call needs an end call
+            spriteBatch.DrawString(font, "Hello MonoGame!", new Vector2(100,100), Color.DarkGreen); //console writeline for directX
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
