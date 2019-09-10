@@ -44,7 +44,7 @@ namespace GameHelloWorld
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("font");
-            pacman = Content.Load<Texture2D>("PacmanSingle"); //monogame turns everything into xmbs so no file ext needed
+            pacman = Content.Load<Texture2D>("PacmanSingle"); //monogame turns everything into xnbs so no file ext needed
             pacLocation = new Vector2(200, 200);
             // TODO: use this.Content to load your game content here
         }
