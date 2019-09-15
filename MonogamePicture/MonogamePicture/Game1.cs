@@ -12,6 +12,9 @@ namespace MonogamePicture
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        SpriteFont font;
+        Texture2D pikmin, bulborb, oats;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -39,6 +42,11 @@ namespace MonogamePicture
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            font = Content.Load<SpriteFont>("font");
+            pikmin = Content.Load<Texture2D>("pikmin");
+            bulborb = Content.Load<Texture2D>("bulborb");
+            oats = Content.Load<Texture2D>("oats");
 
             // TODO: use this.Content to load your game content here
         }
@@ -74,6 +82,16 @@ namespace MonogamePicture
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+
+            spriteBatch.Begin();
+
+            spriteBatch.DrawString(font, "when it tuesday", new Vector2(250,250), Color.White);
+
+            spriteBatch.Draw(pikmin, new Vector2(500, 100), Color.White);
+            spriteBatch.Draw(bulborb, new Vector2(50, 275), Color.White);
+            spriteBatch.Draw(oats, new Vector2(30, 50), Color.White);
+
+            spriteBatch.End();
 
             // TODO: Add your drawing code here
 

@@ -13,13 +13,6 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin File.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:File.spritefont;font.spritefont
-
 #begin PacmanSingle.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -31,4 +24,11 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:PacmanSingle.png
+
+#begin font.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:font.spritefont
 

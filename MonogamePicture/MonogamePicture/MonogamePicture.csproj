@@ -53,6 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bulborb.png" />
+    <Content Include="Content\oats.png" />
+    <Content Include="Content\pikmin.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
