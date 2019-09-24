@@ -22,6 +22,11 @@ public class SimpleMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        this.UpdateMovement();
+    }
+
+    protected virtual void UpdateMovement()
+    {
         //time corrected movement
         this.moveTranslation = new Vector3(this.direction.x, this.direction.y) * Time.deltaTime * this.speed;
 
