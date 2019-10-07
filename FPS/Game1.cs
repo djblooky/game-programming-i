@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 namespace FPS
 {
@@ -12,12 +13,12 @@ namespace FPS
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-
-        
+        List<Sprite> sprites;
         FPSComponent fps;
 
         public Game1()
         {
+            sprites = new List<Sprite>();
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             fps = new FPSComponent(this, false, false); //set last two to false, test speed of card plugged vs unplugged
@@ -33,9 +34,17 @@ namespace FPS
         /// </summary>
         protected override void Initialize()
         {
-            
+            CreateSprites(100);
 
             base.Initialize();
+        }
+
+        void CreateSprites(int numOfSprites)
+        {
+            for(int i=0; i<numOfSprites; i++)
+            {
+                sprites.Add(new Sprite());
+            }
         }
 
         /// <summary>
@@ -46,8 +55,16 @@ namespace FPS
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            LoadSprites();
             
+        }
+
+        void LoadSprites()
+        {
+            foreach (Sprite sprite in sprites)
+            {
+                sprite.texture = Content.Load<Texture2D>("kirby");
+            }
         }
 
         /// <summary>
@@ -68,10 +85,20 @@ namespace FPS
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
             
+            UpdateSpritesMovement(gameTime);
 
             base.Update(gameTime);
+        }
+
+        void UpdateSpritesMovement(GameTime gameTime)
+        {
+            float time = (float)gameTime.ElapsedGameTime.TotalMilliseconds; //elapsed time
+            foreach (Sprite sprite in sprites)
+            {
+                sprite.location = sprite.location + ((sprite.direction * sprite.speed) * (time / 1000)); //time corrected move
+            }
+            
         }
 
         /// <summary>
@@ -81,11 +108,20 @@ namespace FPS
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            
 
+            spriteBatch.Begin();
+            DrawSprites();
+            spriteBatch.End();
             
-
             base.Draw(gameTime);
+        }
+
+        void DrawSprites()
+        {
+            foreach (Sprite sprite in sprites)
+            {
+                spriteBatch.Draw(sprite.texture, sprite.location, Color.White);
+            }
         }
     }
 }

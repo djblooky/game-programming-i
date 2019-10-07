@@ -41,6 +41,7 @@
     <Compile Include="FPSClass.cs" />
     <Compile Include="FPSComponent.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Sprite.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -52,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\kirby.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
