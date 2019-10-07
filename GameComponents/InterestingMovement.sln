@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterestingMovement", "InterestingMovement\InterestingMovement.csproj", "{371FD9AC-2028-4E64-86EC-9B9BE1CA3AD5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{371FD9AC-2028-4E64-86EC-9B9BE1CA3AD5}.Debug|x86.ActiveCfg = Debug|x86
+		{371FD9AC-2028-4E64-86EC-9B9BE1CA3AD5}.Debug|x86.Build.0 = Debug|x86
+		{371FD9AC-2028-4E64-86EC-9B9BE1CA3AD5}.Release|x86.ActiveCfg = Release|x86
+		{371FD9AC-2028-4E64-86EC-9B9BE1CA3AD5}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C1397446-EBF1-4860-8AB9-BAB7FE30A2E3}
+	EndGlobalSection
+EndGlobal
