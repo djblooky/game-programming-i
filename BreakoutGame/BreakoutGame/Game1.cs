@@ -12,10 +12,15 @@ namespace BreakoutGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        Ball ball;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            ball = new Ball(this);
+            this.Components.Add(ball);
         }
 
         /// <summary>
