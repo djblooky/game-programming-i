@@ -13,6 +13,7 @@ namespace BreakoutGame
         SpriteBatch spriteBatch;
 
         Ball ball;
+        Block block;
 
         public Game1()
         {
@@ -21,6 +22,8 @@ namespace BreakoutGame
 
             ball = new Ball(this);
             this.Components.Add(ball);
+            block = new Block(this);
+            this.Components.Add(block);
         }
 
         /// <summary>
@@ -68,6 +71,16 @@ namespace BreakoutGame
                 Exit();
 
             // TODO: Add your update logic here
+            //test ball launching
+            if(ball.State == BallState.OnPaddleStart)
+            {
+                ball.LaunchBall(gameTime);
+            }
+
+            if(block.State == BlockState.Normal)
+            {
+                block.HitByBall(ball);
+            }
 
             base.Update(gameTime);
         }

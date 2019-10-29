@@ -42,6 +42,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Ball.cs" />
+    <Compile Include="Block.cs" />
+    <Compile Include="Content\MonogameBlock.cs" />
+    <Compile Include="Content\Paddle.cs" />
+    <Compile Include="Content\PaddleController.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -54,6 +58,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ballBig.png" />
+    <Content Include="Content\ballSmall.png" />
+    <Content Include="Content\block_blue.png" />
+    <Content Include="Content\block_bubble.png" />
+    <Content Include="Content\block_bubbleBig.png" />
+    <Content Include="Content\block_earth.png" />
+    <Content Include="Content\block_greenWaveBig.png" />
+    <Content Include="Content\block_greenWaveSmall.png" />
+    <Content Include="Content\block_red.png" />
+    <Content Include="Content\block_yellow.png" />
+    <Content Include="Content\paddleBig.png" />
+    <Content Include="Content\paddleBiger.png" />
+    <Content Include="Content\paddleSmall.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
